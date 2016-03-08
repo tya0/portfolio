@@ -25,7 +25,6 @@ Default Styling
 html {
 	font-size: 62.5%;
 	font-family: 'Josefin Sans', sans-serif;
-	margin-top: 0;
 }
 
 body {
@@ -39,7 +38,6 @@ img {
 section {
 	width:calc(100%-200px);
 	margin-left:200px;
-	height:100vh;
 	border-bottom: 1px solid black;
 }
 
@@ -50,7 +48,13 @@ section {
 	padding: 3%;
 }
 
+.home, .about, .skills, .contact {
+	height: 100vh;
+}
 
+.portfolio {
+
+}
 
 
 
