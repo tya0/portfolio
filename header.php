@@ -10,21 +10,43 @@
   <?php wp_head(); ?>
 </head>
 
-
 <body <?php body_class(); ?>>
 
-<header>
-  <div class="container">
-    <h1>
-      <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-        <?php bloginfo( 'name' ); ?>
-      </a>
-    </h1>
+<aside class="sideNav clearfix">
+  <div class="wrapper">
+    <div class="container">
+      <div class="cube show-front">
+          <figure class="front"><p>TY</p></figure>
+          <figure class="back"><p>About</p></figure>
+          <figure class="right"><p>Skills</p></figure>
+          <figure class="left"><p>Work</p></figure>
+          <figure class="top"><p>Contact</p></figure>
+          <figure class="bottom"><p></p></figure>
+      </div>
+    </div>
 
-    <?php wp_nav_menu( array(
-      'container' => false,
-      'theme_location' => 'primary'
-    )); ?>
-  </div> <!-- /.container -->
-</header><!--/.header-->
+   <ul class="nav buttons" id="menu">
+          <li>
+            <a class="nav home-link show-front active" href="#home" data-action="show-front">Home</a>
+          </li>
+          
+          <li>
+            <a class="nav about-link show-back" href="#about" data-action="show-back">About</a>
+          </li>
+          
+          <li>
+            <a class="nav skills-link show-right" href="#skills" data-action="show-right">Skills</a>
+          </li>
+          
+          <li>
+            <a class="nav portfolio-link show-left" href="#portfolio" data-action="show-left">Work</a>
+          </li>
+          
+          <li>
+            <a class="nav contact-link show-top" href="#contact" data-action="show-top">Contact</a>
+          </li> 
+          <!-- <li><a href="#">Contact</a></li> -->
+        </ul>
+  </div>
+</aside>
 
