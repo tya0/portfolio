@@ -27,19 +27,20 @@
 			border:1px solid black;
 			text-align: center;
 			line-height: 100px;
-			font-size: 46px;
+			
 			background-color: rgba(255,63,63,0.7);
 			}
 				p {
 					//font-family: $navText;
 					text-transform: uppercase;
 					font-weight:bold;
+					font-size: 55px;
 				}
 
 				.front p {
-					font-size:72px;
-					padding-top:5px;
-					font-weight: bold;
+					font-size: 102px;
+					line-height: 1;
+					font-weight: 700;
 					letter-spacing: 3px;
 				}
 
@@ -78,9 +79,6 @@
 	margin-top:20px;
 }
 
-.top p {
-	font-size: 40px;
-}
 
 .cube .front p, 
 .cube .back p,

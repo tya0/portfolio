@@ -9,12 +9,14 @@
 
 @import 'normalize';
 @import 'typography';
+@import 'variables.scss';
+@import 'placeholders-mixins.scss';
 @import 'navigation';
 @import 'sidebar';
 @import 'comments';
 @import 'footer';
-@import 'placeholders-mixins.scss';
 @import 'cube.scss';
+
 /*
 
 ====================================
@@ -24,11 +26,12 @@ Default Styling
 
 html {
 	font-size: 62.5%;
-	font-family: 'Josefin Sans', sans-serif;
 }
 
 body {
 	@include fontSizer(16);
+font-family: 'Pathway Gothic One', sans-serif;
+overflow-x: hidden;
 }
 
 img {
@@ -39,6 +42,10 @@ section {
 	width:calc(100% - 200px);
 	margin-left:200px;
 
+}
+
+.section-title {
+    display: none;
 }
 
 
@@ -59,14 +66,22 @@ section {
     z-index: 0;
     position: absolute;
     left: 280px;
-    width: 100%;
-    max-width:1180px;
+    max-width: 100%;
+    width:1180px;
+
     .home-content {
     	transform: skew(12deg);
     }
 }
 
+#home .wrapper {
+    overflow-x: hidden;
+}
 
+.portfolio-item {
+    .item-desc-wrapper, img{
+        width: 50%;
+        float: left;
+    }
 
-
-
+}

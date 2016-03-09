@@ -7,6 +7,7 @@ aside {
 	background: #F9F9F9;
 	z-index: 2;
 	transform: skewX(6deg);
+
     .wrapper {
     	transform: skew(-6deg);
     	position: absolute;
@@ -28,11 +29,11 @@ aside::before {
 
 ul.nav {
 	position:fixed;
-	left:0;
-	top: 250px;
+	left:20px;
+	top: 200px;
 	padding: 10px;
-	width: 200px;
-	//font-family: $navText;
+	width: 150px;
+	font-family: $navFont;
 	text-transform: uppercase;
 	z-index: 3;
 	text-align: left;
@@ -50,17 +51,16 @@ ul.nav {
 
 ul.nav li a {
 	text-decoration: none;
-	//color: $linkText;
 	margin: 0;
-	// transition-duration:0.2s;
-	font-size:24px;
+	font-size: 30px;
 	letter-spacing: 3px;
+	color: $navLinkColour;
 
 	&:hover {
-		color:red;
+		color: $accent;
 	}
 	&.active {
-		color:red;	
+		color: $accent;	
 	}
 }
 
