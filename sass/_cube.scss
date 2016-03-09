@@ -5,7 +5,8 @@
 	perspective:1000px;
 	position:fixed;
 	top:25px;
-	left:25px;
+	//left:25px;
+	left: 10px; //changed to accomodate the skew
 	z-index:1000;
 }
 

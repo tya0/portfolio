@@ -8,8 +8,10 @@
 		<?php if( $pageQuery -> have_posts() ) : ?>
 			<?php while( $pageQuery -> have_posts() ) : ?>
 				<?php $pageQuery -> the_post(); ?>
-				<h1><?php the_field('home_name'); ?></h1>
-				<h2><?php the_field('home_occupation'); ?></h2>
+				<div class="home-content">
+					<h1><?php the_field('home_name'); ?></h1>
+					<h2><?php the_field('home_occupation'); ?></h2>
+				</div>
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
 		<?php endif; ?>

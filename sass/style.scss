@@ -36,9 +36,9 @@ img {
 }
 
 section {
-	width:calc(100%-200px);
+	width:calc(100% - 200px);
 	margin-left:200px;
-	border-bottom: 1px solid black;
+
 }
 
 
@@ -52,8 +52,18 @@ section {
 	height: 100vh;
 }
 
-.portfolio {
-
+#home .wrapper {
+    background: #F9F9F9;
+    height: 100vh;
+    transform: skew(-12deg);
+    z-index: 0;
+    position: absolute;
+    left: 280px;
+    width: 100%;
+    max-width:1180px;
+    .home-content {
+    	transform: skew(12deg);
+    }
 }
 
 
