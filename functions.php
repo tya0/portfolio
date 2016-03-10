@@ -52,6 +52,8 @@ function hackeryou_styles(){
 	wp_enqueue_script('googlefont', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
 	wp_enqueue_style('devicon', 'https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css');
+
+	wp_enqueue_style('googlefont', 'https://fonts.googleapis.com/css?family=Abril+Fatface');
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_styles');
@@ -291,3 +293,4 @@ function get_post_parent($post) {
 		return $post->ID;
 	}
 }
+

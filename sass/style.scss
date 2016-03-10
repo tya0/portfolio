@@ -30,8 +30,9 @@ html {
 
 body {
 	@include fontSizer(16);
-font-family: $mainFont;
-overflow-x: hidden;
+    font-family: $mainFont;
+    overflow-x: hidden;
+    color: $navLinkColour;
 }
 
 img {
@@ -56,7 +57,11 @@ section {
 }
 
 .home, .about, .skills, .contact {
-	height: 100vh;
+	min-height: 100vh;
+}
+
+#home {
+    position: relative;
 }
 
 #home .wrapper {
@@ -65,12 +70,25 @@ section {
     transform: skew(-12deg);
     z-index: 0;
     position: absolute;
-    left: 280px;
+   // left: 280px;
+    left: 80px;
     max-width: 100%;
     width:1180px;
 
     .home-content {
-    	transform: skew(12deg);
+    	//transform: skew(12deg);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-140%,-50%) skew(12deg);
+        h1 {
+            font-family: $navFont;
+            color:red;
+            text-transform: uppercase;
+            @include fontSizer(85);
+            letter-spacing: 0;
+            margin: 0;
+        }
     }
 }
 
@@ -78,13 +96,77 @@ section {
     overflow-x: hidden;
 }
 
+////// PORTFOLIO STYLES
+
 .portfolio-item {
-    .item-desc-wrapper, img{
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .item-desc-wrapper{
         width: 50%;
         float: left;
+        letter-spacing: 1px;
+        h2 {
+            font-family: $navFont;
+            color: black;
+            @include fontSizer(30);
+            position: relative;
+            &::after {
+                content: '';
+                height: 3px;
+                width: 50px;
+                background: black;
+                position: absolute;
+                left: 0;
+                top: 46px;
+            }
+        }
+        .technologies {
+            font-family: $navFont;    
+            margin-top: 0;
+            @include fontSizer(18);
+            span {
+                color: red;
+                font-size: 24px;
+                position: relative;
+                top: 2px;
+                font-weight: 700;
+            }
+        }
+        a {
+            text-decoration: none;
+            color: $accent;
+            padding: 5px 8px;
+            border: 1px solid $accent;
+            transition: all 1s;
+            &:hover {
+                color: white;
+                background: $accent;
+            }
+        }
+    }
+    img {
+        float: left;
+        width: 50%;
+        max-width: 250px;
+        margin-left: 3%;
+        border: 5px solid white;
+        box-shadow: 14px -11px 0 #FB4C4C;
     }
 
 }
+
+.portfolio-item:nth-child(odd) {
+    img {
+        order: -1;
+        box-shadow: -14px -11px 0 #FB4C4C;
+        margin-right: 3%;
+    }
+}
+
+
 
 .about .wrapper {
 	position: relative;
@@ -147,3 +229,16 @@ section {
     .devicon-github-plain {
         @extend %devIcon;
     }
+
+
+//CONTACT 
+
+form {
+    width: 60%;
+    float: left;
+}
+
+.contact-links {
+    width: 40%;
+    float: left;
+}
