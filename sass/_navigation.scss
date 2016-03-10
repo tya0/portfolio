@@ -25,11 +25,12 @@ aside::before {
 	left: -61px;
 	z-index: 0;
 	transform: skew(-18deg);
+	border-right: 1px solid #755F5F;
 }
 
 ul.nav {
 	position:fixed;
-	left:20px;
+	left:15px;
 	top: 200px;
 	padding: 10px;
 	width: 150px;

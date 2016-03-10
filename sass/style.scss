@@ -30,7 +30,7 @@ html {
 
 body {
 	@include fontSizer(16);
-font-family: 'Pathway Gothic One', sans-serif;
+font-family: $mainFont;
 overflow-x: hidden;
 }
 
@@ -85,3 +85,65 @@ section {
     }
 
 }
+
+.about .wrapper {
+	position: relative;
+	&::after {
+	    height: 100vh;
+	    background: gray;
+	    width: 75%;
+
+	    position: absolute;
+
+	}
+}
+
+
+// .about-content {
+//     padding-left: 15%;
+//     position: relative;
+//     p {
+//         width: 60%;
+//         float: left;
+//     }
+//     .image-wrap {
+//         width: 40%;
+//         float: left;
+//     }
+//     img {
+//         max-width: 190px;
+//         display: block;   
+//         //border-right: 13px solid $accent;
+//         //border-top: 13px solid $accent;
+//         border: 3px solid white;
+//         box-shadow: 11px -11px 0px $accent;
+//     }
+// }
+
+
+.devIcons {
+    margin: 0;
+    padding: 0;
+    li {
+        display: inline-block;
+        list-style: none;
+        margin:1%;
+    }
+}
+
+%devIcon {
+    font-size:45px;
+    // color: #8E7F7F;
+    color:#B9B6B6;
+}
+
+    .devicon-html5-plain,
+    .devicon-css3-plain,
+    .devicon-javascript-plain,
+    .devicon-jquery-plain,
+    .devicon-sass-original,
+    .devicon-wordpress-plain,
+    .devicon-grunt-line,
+    .devicon-github-plain {
+        @extend %devIcon;
+    }

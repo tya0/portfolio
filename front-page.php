@@ -20,24 +20,25 @@
 
 <section class="about" id="about">
 	<div class="wrapper">
-		<h1>
-			<?php if( $pageQuery -> have_posts() ) : ?>
-				<?php while( $pageQuery -> have_posts() ) : ?>
-					<?php $pageQuery -> the_post(); ?>
+		<?php if( $pageQuery -> have_posts() ) : ?>
+			<?php while( $pageQuery -> have_posts() ) : ?>
+				<?php $pageQuery -> the_post(); ?>
 
-						<h1 class="section-title"><?php the_field('about_title'); ?></h1>
-						<div class="about-content">
-							<p> <?php the_field('about_description_1') ?></p>
-							<?php while( has_sub_field('images') ) : ?>
-							<?php $image = get_sub_field('image'); ?>
-							<img src="<?php echo $image['sizes']['medium']; ?>" alt="">
-						<?php endwhile; ?>
+					<h1 class="section-title"><?php the_field('about_title'); ?></h1>
+					<div class="about-content clearfix">
+						<p> <?php the_field('about_description_1') ?></p>
+						<?php while( has_sub_field('images') ) : ?>
+						<?php $image = get_sub_field('image'); ?>
+						<div class="image-wrap">
+							
+							<img src="<?php echo $image['sizes']['medium']; ?>" alt=""></div>
 						</div>
+					<?php endwhile; ?>
+					</div>
 
-				<?php endwhile; ?>
-				<?php wp_reset_postdata(); ?>
-			<?php endif; ?>
-		</h1>
+			<?php endwhile; ?>
+			<?php wp_reset_postdata(); ?>
+		<?php endif; ?>
 	</div>
 </section>
 
@@ -47,7 +48,7 @@
 			<?php while ( $pageQuery -> have_posts() ) : ?>
 				<?php $pageQuery -> the_post(); ?>
 				<h1 class="section-title"><?php the_field('skill_title'); ?></h1>
-				<?php the_field('skill_list'); ?>
+				<?php the_field('skill_list'); ?> 
 					
 				</div>
 			<?php endwhile; ?>
@@ -67,7 +68,11 @@
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
 		<?php endif; ?>
-
+		<div class="skills-list-wrap">
+			<p>Using these tools: </p>
+			<?php the_field('skill_list'); ?>
+			<p>I have built: </p>
+		</div>
 
 		<?php $portfolioQuery = new WP_Query(array(
 			'posts_per_page' => 4,
