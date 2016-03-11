@@ -80,16 +80,26 @@ section {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-140%,-50%) skew(12deg);
+        transform: translate(-120%,-50%) skew(12deg);
         h1 {
             font-family: $navFont;
-            color:red;
+            color:$accent;
             text-transform: uppercase;
-            @include fontSizer(85);
+            @include fontSizer(100);
             letter-spacing: 0;
             margin: 0;
         }
+        h2 {
+
+        }
     }
+}
+
+.blast {
+	opacity: 0;
+}
+.blast-root {
+	opacity: 1;
 }
 
 #home .wrapper {
@@ -97,9 +107,11 @@ section {
 }
 
 ////// PORTFOLIO STYLES
-
+#portfolio {
+    clear: both;
+}
 .portfolio-item {
-    margin-bottom: 5%;
+    margin-bottom: 8%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -113,6 +125,8 @@ section {
             color: black;
             @include fontSizer(30);
             position: relative;
+            margin-top: 0;
+            margin-bottom: 10%;
             &::after {
                 content: '';
                 height: 3px;
@@ -120,13 +134,14 @@ section {
                 background: black;
                 position: absolute;
                 left: 0;
-                top: 46px;
+                top: 50px;
             }
         }
         .technologies {
-            font-family: $navFont;    
+               
             margin-top: 0;
-            @include fontSizer(18);
+            @include fontSizer(15);
+            letter-spacing: 0;
             span {
                 color: red;
                 font-size: 24px;
@@ -134,6 +149,9 @@ section {
                 top: 2px;
                 font-weight: 700;
             }
+        }
+        .item-desc {
+            margin-bottom: 8%;
         }
         a {
             text-decoration: none;
@@ -150,10 +168,10 @@ section {
     img {
         float: left;
         width: 50%;
-        max-width: 250px;
+        max-width: 325px;
         margin-left: 3%;
         border: 5px solid white;
-        box-shadow: 14px -11px 0 #FB4C4C;
+        box-shadow: 14px -11px 0 #D8D8D8;
     }
 
 }
@@ -161,10 +179,12 @@ section {
 .portfolio-item:nth-child(odd) {
     img {
         order: -1;
-        box-shadow: -14px -11px 0 #FB4C4C;
+        box-shadow: -14px -11px 0 #D8D8D8;
         margin-right: 3%;
     }
 }
+
+
 
 
 
@@ -202,19 +222,39 @@ section {
 //     }
 // }
 
+//// SKILLS 
+.skills {
+    .intro-tools, .lead-to-portfolio {
+        text-transform: uppercase;
+        font-family: $navFont;
+        color: black;
+        @include fontSizer(50);
+    }
+    .lead-to-portfolio {
+        text-align: right;
+    }
+    .icon-container {
+        height: 120px;
+        overflow: hidden;
+        .arrow {
+            float: right;
+        }
+    }
+}
 
 .devIcons {
-    margin: 0;
+    margin: 8% 0;
     padding: 0;
     li {
         display: inline-block;
         list-style: none;
         margin:1%;
+        text-align: center;
     }
 }
 
 %devIcon {
-    font-size:45px;
+    font-size:70px;
     // color: #8E7F7F;
     color:#B9B6B6;
 }

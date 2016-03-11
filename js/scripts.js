@@ -1,5 +1,40 @@
 $(function() { // begin document ready
 
+	$(".home-content h1, .home-content h2")
+	.blast({ 
+		delimiter: "character",
+		customClass: 'name'
+	})
+	.velocity("fadeIn", { 
+		display: "null",
+		duration: 950,
+		stagger: 40,
+		delay: 400
+	});
+
+	//function start() {
+	//  $(".arrow").velocity(
+	//    { 
+	//      translateY: [ 125, 0 ]
+	//    },
+	//    { 
+	//      duration: 2100,
+	//      delay: 0,
+	//      easing: "linear",
+	//      complete: start
+	//    });
+	//}
+	//start();
+
+	//$('.cube').velocity({
+	//  rotateX: '270deg',
+	//  rotateY: '50deg'
+	//},{
+	//  duration:2000,
+	//  loop:true,
+	//  easing:'linear'
+	//});
+
 $(window).scroll(function() {
 
     var position = $(this).scrollTop();

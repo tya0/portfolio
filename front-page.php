@@ -44,18 +44,19 @@
 
 <section class="skills" id="skills">
 	<div class="wrapper">
+		<h2 class="intro-tools">Using these tools...</h2>
 		<?php if ( $pageQuery -> have_posts() ) : ?>
 			<?php while ( $pageQuery -> have_posts() ) : ?>
 				<?php $pageQuery -> the_post(); ?>
 				<h1 class="section-title"><?php the_field('skill_title'); ?></h1>
 				
 				<?php the_field('skill_list'); ?> 
-					
-				</div>
+
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
 		<?php endif; ?>
-		
+		<h2 class="lead-to-portfolio">I have built... </h2>
+		<div class="icon-container"><i class="fa fa-long-arrow-down fa-5x arrow animated infinite bounce"></i></div>
 	</div>
 </section>
 
