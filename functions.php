@@ -55,8 +55,6 @@ function hackeryou_styles(){
 
 	wp_enqueue_style('googlefont3', 'https://fonts.googleapis.com/css?family=Abril+Fatface');
 
-	wp_enqueue_style('velocityui', 'https://cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js');
-
 	wp_enqueue_style('animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css');
 }
 
@@ -88,7 +86,7 @@ function hackeryou_scripts() {
   wp_enqueue_script(
     'scripts', //handle
     get_template_directory_uri() . '/js/main.min.js', //source
-    array( 'jquery', 'plugins', 'blast', 'velocity' ), //dependencies
+    array( 'jquery', 'plugins', 'blast', 'velocity', 'velocityui' ), //dependencies
     null, // version number
     true //load in footer
   );
@@ -105,6 +103,14 @@ function hackeryou_scripts() {
 		'velocity',
 		"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js",
 		array( 'jquery', 'plugins', 'blast' ), //dependencies
+		null, //version number
+		true //load in footer
+	);
+
+	wp_enqueue_script(
+		'velocityui',
+		"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js",
+		array( 'jquery', 'plugins', 'blast', 'velocity' ), //dependencies
 		null, //version number
 		true //load in footer
 	);

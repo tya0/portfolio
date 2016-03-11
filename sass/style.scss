@@ -90,7 +90,11 @@ section {
             margin: 0;
         }
         h2 {
-
+        	line-height: 0;
+        	@include fontSizer(28);
+        	span.red {
+        		color: #616161;;
+        	}
         }
     }
 }
@@ -125,8 +129,8 @@ section {
             color: black;
             @include fontSizer(30);
             position: relative;
-            margin-top: 0;
-            margin-bottom: 10%;
+           // margin-bottom: 7%;
+           margin-bottom: 30px;
             &::after {
                 content: '';
                 height: 3px;

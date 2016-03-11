@@ -10,7 +10,7 @@
 				<?php $pageQuery -> the_post(); ?>
 				<div class="home-content">
 					<h1><?php the_field('home_name'); ?></h1>
-					<h2>// <?php the_field('home_occupation'); ?></h2>
+					<h2><span class="red">//</span> <?php the_field('home_occupation'); ?></h2>
 				</div>
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
@@ -82,8 +82,8 @@
 				<?php $portfolioQuery -> the_post(); ?>
 					<div class="portfolio-item clearfix">
 						<div class="item-desc-wrapper">
-							<p class="technologies"><span>// </span> <?php the_field('technologies_used'); ?></p>
 							<h2 class="item-title"><?php the_title(); ?></h2>
+							<p class="technologies"><span>// </span> <?php the_field('technologies_used'); ?></p>
 							<p class="item-desc"><?php the_field('portfolio_item_desc'); ?></p>
 							<a href=" <?php echo the_field('portfolio_item_link') ?> ">View Live</a>
 						</div>

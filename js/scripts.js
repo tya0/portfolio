@@ -6,9 +6,9 @@ $(function() { // begin document ready
 		customClass: 'name'
 	})
 	.velocity("fadeIn", { 
-		display: "null",
-		duration: 950,
-		stagger: 40,
+		//display: "null",
+		duration: 1250,
+		stagger: 60,
 		delay: 400
 	});
 
@@ -26,14 +26,6 @@ $(function() { // begin document ready
 	//}
 	//start();
 
-	//$('.cube').velocity({
-	//  rotateX: '270deg',
-	//  rotateY: '50deg'
-	//},{
-	//  duration:2000,
-	//  loop:true,
-	//  easing:'linear'
-	//});
 
 $(window).scroll(function() {
 
