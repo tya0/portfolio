@@ -12,6 +12,12 @@
 
 <body <?php body_class(); ?>>
 
+<header>
+    <div class="menu-wrap">
+        <div class="hamburger"><span></span></div>
+    </div>
+</header>
+
 <aside class="sideNav clearfix">
   <div class="wrapper">
     <div class="container">

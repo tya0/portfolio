@@ -12,6 +12,16 @@ $(function() { // begin document ready
 		delay: 400
 	});
 
+    $(".hamburger").on("click", function(){
+        if ($("aside").hasClass("navOpen")) {
+            $(this).toggleClass("active");
+            $("aside").removeClass("navOpen").slideUp();
+        } else {
+            $(this).toggleClass("active");
+            $("aside").addClass("navOpen").slideDown();
+        }
+    })
+
 	//function start() {
 	//  $(".arrow").velocity(
 	//    { 

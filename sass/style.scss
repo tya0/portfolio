@@ -7,6 +7,8 @@
 * Author URI: http://hackeryou.com
 */
 
+@import "bourbon/bourbon";
+@import "neat/neat";
 @import 'normalize';
 @import 'typography';
 @import 'variables.scss';
@@ -16,6 +18,7 @@
 @import 'comments';
 @import 'footer';
 @import 'cube.scss';
+
 
 /*
 
@@ -51,9 +54,10 @@ section {
 
 
 .wrapper {
-	max-width:980px;
-	margin:0 auto;
-	padding: 3%;
+    @include outer-container(100%);
+    max-width:980px;
+    margin:0 auto;
+    padding: 3%;
 }
 
 .home, .about, .skills, .contact {
@@ -74,6 +78,8 @@ section {
     left: 80px;
     max-width: 100%;
     width:1180px;
+    //@include outer-container(100%);
+    //@include span-columns(12);
 
     .home-content {
     	//transform: skew(12deg);
@@ -93,7 +99,7 @@ section {
         	line-height: 0;
         	@include fontSizer(28);
         	span.red {
-        		color: #616161;;
+        		color: $accent;
         	}
         }
     }
@@ -116,10 +122,7 @@ section {
 }
 .portfolio-item {
     margin-bottom: 8%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+
     .item-desc-wrapper{
         width: 50%;
         float: left;
@@ -142,7 +145,6 @@ section {
             }
         }
         .technologies {
-               
             margin-top: 0;
             @include fontSizer(15);
             letter-spacing: 0;
@@ -156,6 +158,8 @@ section {
         }
         .item-desc {
             margin-bottom: 8%;
+            position: relative;
+            top: -17px;
         }
         a {
             text-decoration: none;
@@ -163,6 +167,7 @@ section {
             padding: 5px 8px;
             border: 1px solid $accent;
             transition: all 1s;
+            @include fontSizer(18);
             &:hover {
                 color: white;
                 background: $accent;
@@ -173,19 +178,11 @@ section {
         float: left;
         width: 50%;
         max-width: 325px;
-        margin-left: 3%;
+        margin-right: 5%;
         border: 5px solid white;
-        box-shadow: 14px -11px 0 #D8D8D8;
-    }
-
-}
-
-.portfolio-item:nth-child(odd) {
-    img {
-        order: -1;
         box-shadow: -14px -11px 0 #D8D8D8;
-        margin-right: 3%;
     }
+
 }
 
 
@@ -193,38 +190,26 @@ section {
 
 
 .about .wrapper {
-	position: relative;
-	&::after {
-	    height: 100vh;
-	    background: gray;
-	    width: 75%;
-
-	    position: absolute;
-
-	}
+    .about-content {
+        margin-top: 10%;
+        .about-me {
+            width: 60%;
+            @include fontSizer(18);
+            text-align: justify;
+            margin-right: 5%;
+        }
+        img {
+            border: 5px solid white;
+            box-shadow: 14px -11px 0 $accent;
+        }
+        .about-me, img {
+            float: left;
+        }
+    }
+   
 }
 
 
-// .about-content {
-//     padding-left: 15%;
-//     position: relative;
-//     p {
-//         width: 60%;
-//         float: left;
-//     }
-//     .image-wrap {
-//         width: 40%;
-//         float: left;
-//     }
-//     img {
-//         max-width: 190px;
-//         display: block;   
-//         //border-right: 13px solid $accent;
-//         //border-top: 13px solid $accent;
-//         border: 3px solid white;
-//         box-shadow: 11px -11px 0px $accent;
-//     }
-// }
 
 //// SKILLS 
 .skills {
@@ -242,6 +227,7 @@ section {
         overflow: hidden;
         .arrow {
             float: right;
+            color: $accent;
         }
     }
 }
@@ -269,7 +255,7 @@ section {
     .devicon-jquery-plain,
     .devicon-sass-original,
     .devicon-wordpress-plain,
-    .devicon-grunt-line,
+    .devicon-gulp-plain,
     .devicon-github-plain {
         @extend %devIcon;
     }
@@ -278,11 +264,158 @@ section {
 //CONTACT 
 
 form {
-    width: 60%;
-    float: left;
+    @include span-columns(7 of 12);
+    input, textarea {
+        padding: 2%;
+        width: 80%;
+    }
+    input[type=submit] {
+        background: none;
+        border: 1px solid $accent;
+        color: $accent;
+        font-weight: 700;
+        transition: all 0.5s;
+        border: 1px solid $accent;
+        &:hover {
+            background: $accent;
+            color: white;
+        }
+    }
 }
 
+
+
 .contact-links {
-    width: 40%;
-    float: left;
+    @include span-columns(5 of 12);
+    h3 {
+        font-family: $navFont;
+        color: $accent;
+        @include fontSizer(30);
+    }
+}
+
+#menu-contact {
+    padding: 0;
+    margin: 0;
+    li {
+        list-style: none;
+        margin-bottom: 8%;     
+        a {
+            text-decoration: none;
+            color: $mainFontColour;
+            margin-bottom: 5%;
+            padding-left: 0;
+            position: relative;
+            @include fontSizer(20);
+            &:hover .icon {
+                color: $accent;
+            }
+            .icon {
+                transition: all 0.5s;
+                margin-right: 2%;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        margin-left: 0;
+        h1 {
+            margin-top: 0;
+        }
+    }
+
+    .wrapper {
+        width: 100%;
+        padding: 2% 4%;
+    }
+
+    .section-title {
+        display: block;
+        font-family: $navFont;
+        @include fontSizer(50);
+    }
+
+    #home, #about, #skills, #portfolio, #contact {
+        width: 100%;
+        position: static;
+    }
+
+    #home .wrapper {
+        transform: skew(0deg);
+        position: relative;
+        left: 0;
+        .home-content {
+            width: 100%;
+            padding: 5%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%) skew(0deg);
+        }
+    }
+
+    .about .wrapper .about-content {
+        margin-top: 0;
+        width: 100%;
+        .about-me {
+            margin: 0 auto 15% auto;
+            float: none;
+            width: 100%;
+        }
+        img {
+            width: 80%;
+            margin: 0 auto;
+            display: block;
+            float: none;
+        }
+    }
+
+    .skills .intro-tools, .skills .lead-to-portfolio {
+        @include fontSizer(40);
+    }
+
+    .devicon-html5-plain,
+    .devicon-css3-plain,
+    .devicon-javascript-plain,
+    .devicon-jquery-plain,
+    .devicon-sass-original,
+    .devicon-wordpress-plain,
+    .devicon-gulp-plain,
+    .devicon-github-plain {
+        @include fontSizer(50);
+    }
+
+    .portfolio-item {
+        margin-bottom: 15%;
+        img , .item-desc-wrapper {
+            float: none;
+            width: 100%;
+            display: block;
+            margin-right: 0;
+            margin: 0 auto;
+        }
+        .item-desc-wrapper {
+            .item-desc {
+                margin-bottom: 3%;
+            }
+        }
+    }
+
+    .contact {
+        form, .contact-links {
+            float: none;
+            width: 100%;
+        }
+        form input, form textarea {
+            margin: 0 auto;
+        }
+        .contact-links {
+            margin-top: 12%;
+            h3 {
+                margin-bottom: 5%;
+            }
+        }
+    }
 }

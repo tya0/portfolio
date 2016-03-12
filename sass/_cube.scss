@@ -4,9 +4,10 @@
 	position:relative;
 	perspective:1000px;
 	position:fixed;
-	top:25px;
+	top: 17px;
+	left: 15px;
 	//left:25px;
-	left: 10px; //changed to accomodate the skew
+	//left: 10px; //changed to accomodate the skew
 	z-index:1000;
 }
 
@@ -115,4 +116,10 @@
 }
 .cube.show-bottom { 
 	transform: translateZ( -100px ) rotateX(   90deg ); 
+}
+
+@media (max-width: 480px) {
+	.container {
+		display: none;
+	}
 }

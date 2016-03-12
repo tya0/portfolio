@@ -1,3 +1,7 @@
+header {
+	display: none;
+}
+
 aside {
 	position: fixed;
 	height: 100vh;
@@ -30,8 +34,8 @@ aside::before {
 
 ul.nav {
 	position:fixed;
-	left:15px;
-	top: 200px;
+	left: 20px;
+	top: 190px;
 	padding: 10px;
 	width: 150px;
 	font-family: $navFont;
@@ -65,4 +69,79 @@ ul.nav li a {
 	}
 }
 
+@media (max-width: 480px) {
 
+	aside {
+		width: 100%;
+		position: fixed;
+		top: 64px;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: rgba(0,0,0,0.7);
+		transform: skewX(0deg);
+		display: none;
+
+	    .wrapper {
+	    	transform: skew(0deg);
+	    	padding: 0;
+	    	margin: 0;
+		}
+		&::before {
+			display: none;
+		}
+	}	
+
+	header {
+		display: block;
+		position: fixed;
+		height: 75px;
+		width: 100%;
+		background: black;
+		z-index: 2;
+		.menu-wrap {
+			.hamburger span{
+				margin: 0;
+				padding: 0;
+				width: 35px;
+				height: 5px;
+				z-index:2;
+				background: white;
+				position: absolute;
+				top: 36px;
+				left: 10px;
+				&::before {
+					content: '';
+					background: white;
+					width: 35px;
+					height: 5px;
+					position: absolute;
+					top: 12px;
+				}
+				&::after {
+					content: '';
+					background: white;
+					width: 35px;
+					height: 5px;
+					position: absolute;
+					top: -12px;
+				}
+			}
+			.hamburger span, .hamburger span:before, .hamburger span:after {
+				transition: all 500ms ease-in-out;
+			}
+			.hamburger.active span {
+  				background-color: transparent;
+			}
+			.hamburger.active span:before, .hamburger.active span:after {
+			  top: 0;
+			}
+			.hamburger.active span:before {
+			  transform: rotate(45deg);
+			}
+			.hamburger.active span:after {
+			  transform: rotate(-45deg);
+			}
+		}
+	}
+}

@@ -25,6 +25,10 @@ function theme_setup() {
 		'primary' => 'Primary Navigation'
 	) );
 
+	register_nav_menus( array(
+		'contact' => 'Contact Links'
+	) );
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -49,11 +53,9 @@ function hackeryou_styles(){
 
 	wp_enqueue_style('googlefont1', 'https://fonts.googleapis.com/css?family=Pathway+Gothic+One');
 
-	wp_enqueue_script('googlefont2', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+	wp_enqueue_script('googlefont2', 'https://fonts.googleapis.com/css?family=Lato:400,700');
 
 	wp_enqueue_style('devicon', 'https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css');
-
-	wp_enqueue_style('googlefont3', 'https://fonts.googleapis.com/css?family=Abril+Fatface');
 
 	wp_enqueue_style('animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css');
 }
@@ -311,4 +313,6 @@ function get_post_parent($post) {
 		return $post->ID;
 	}
 }
+
+add_filter( 'show_admin_bar', '__return_false' );
 
