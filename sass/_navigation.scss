@@ -69,12 +69,12 @@ ul.nav li a {
 	}
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
 
 	aside {
 		width: 100%;
 		position: fixed;
-		top: 64px;
+		top: 60px;
 		left: 0;
 		bottom: 0;
 		right: 0;
@@ -95,7 +95,7 @@ ul.nav li a {
 	header {
 		display: block;
 		position: fixed;
-		height: 75px;
+		height: 60px;
 		width: 100%;
 		background: black;
 		z-index: 2;
@@ -108,15 +108,15 @@ ul.nav li a {
 				z-index:2;
 				background: white;
 				position: absolute;
-				top: 36px;
-				left: 10px;
+				top: 27px;
+				right: 12px;
 				&::before {
 					content: '';
 					background: white;
 					width: 35px;
 					height: 5px;
 					position: absolute;
-					top: 12px;
+					top: 10px;
 				}
 				&::after {
 					content: '';
@@ -124,7 +124,7 @@ ul.nav li a {
 					width: 35px;
 					height: 5px;
 					position: absolute;
-					top: -12px;
+					top: -10px;
 				}
 			}
 			.hamburger span, .hamburger span:before, .hamburger span:after {

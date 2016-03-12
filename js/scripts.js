@@ -1,9 +1,24 @@
-$(function() { // begin document ready
+function mobileMenu(){
+    $(".hamburger").on("click", function(){
+        $(this).toggleClass("active");
+        $("aside").toggle();
+        $("ul.nav li a")
+        .blast({ 
+            delimiter: "character"
+        })
+        .velocity("fadeIn", { 
+            //display: "null",
+            duration: 1250,
+            stagger: 40,
+            delay: 300
+        });
+    })
+};
 
+function homeText() {
 	$(".home-content h1, .home-content h2")
 	.blast({ 
-		delimiter: "character",
-		customClass: 'name'
+		delimiter: "character"
 	})
 	.velocity("fadeIn", { 
 		//display: "null",
@@ -11,60 +26,48 @@ $(function() { // begin document ready
 		stagger: 60,
 		delay: 400
 	});
+}
 
-    $(".hamburger").on("click", function(){
-        if ($("aside").hasClass("navOpen")) {
-            $(this).toggleClass("active");
-            $("aside").removeClass("navOpen").slideUp();
-        } else {
-            $(this).toggleClass("active");
-            $("aside").addClass("navOpen").slideDown();
-        }
-    })
+function navScroll() {
+    $(window).scroll(function() {
 
-	//function start() {
-	//  $(".arrow").velocity(
-	//    { 
-	//      translateY: [ 125, 0 ]
-	//    },
-	//    { 
-	//      duration: 2100,
-	//      delay: 0,
-	//      easing: "linear",
-	//      complete: start
-	//    });
-	//}
-	//start();
+        var position = $(this).scrollTop();
 
+        $('section').each(function() {
+            var target = $(this).offset().top;
+            var id = $(this).attr('id');
+            // highlighting bug - workaround below- fix later
+            target -= 100; 
+            
+            if (position >= target) {
+                $('ul.nav li a').removeClass('active');
+                $('ul.nav li a[href=#' + id + ']').addClass('active');
 
-$(window).scroll(function() {
-
-    var position = $(this).scrollTop();
-
-    $('section').each(function() {
-        var target = $(this).offset().top;
-        var id = $(this).attr('id');
-        // highlighting bug - workaround below- fix later
-        target -= 100; 
-        
-        if (position >= target) {
-            $('ul.nav li a').removeClass('active');
-            $('ul.nav li a[href=#' + id + ']').addClass('active');
-
-            if ( $("a.home-link").hasClass("active") ) {
-              $("div.cube").removeClass("show-back").removeClass("show-right").removeClass("show-left").removeClass("show-top").addClass("show-front");
-            } else if ( $("a.about-link").hasClass("active") ) {
-              $("div.cube").removeClass("show-front").removeClass("show-right").removeClass("show-left").removeClass("show-top").addClass("show-back");
-            } else if ( $("a.skills-link").hasClass("active") ) {
-              $("div.cube").removeClass("show-front").removeClass("show-back").removeClass("show-left").removeClass("show-top").addClass("show-right");
-            } else if ( $("a.portfolio-link").hasClass("active") ) {
-              $("div.cube").removeClass("show-front").removeClass("show-back").removeClass("show-right").removeClass("show-top").addClass("show-left");
-            } else if ( $("a.contact-link").hasClass("active")) {
-              $("div.cube").removeClass("show-front").removeClass("show-back").removeClass("show-right").removeClass("show-left").addClass("show-top")
+                if ( $("a.home-link").hasClass("active") ) {
+                  $("div.cube").removeClass("show-back show-right show-left show-top").addClass("show-front");
+                } else if ( $("a.about-link").hasClass("active") ) {
+                  $("div.cube").removeClass("show-front show-right show-left show-top").addClass("show-back");
+                } else if ( $("a.skills-link").hasClass("active") ) {
+                  $("div.cube").removeClass("show-front show-back show-left show-top").addClass("show-right");
+                } else if ( $("a.portfolio-link").hasClass("active") ) {
+                  $("div.cube").removeClass("show-front show-back show-right show-top").addClass("show-left");
+                } else if ( $("a.contact-link").hasClass("active")) {
+                  $("div.cube").removeClass("show-front show-back show-right show-left").addClass("show-top")
+                }
             }
-        }
+        });
     });
-});
+}
+
+$(function() { // begin document ready
+    mobileMenu();
+    homeText();
+    navScroll();
+
+
+
+
+
 
 window.addEventListener( 'DOMContentLoaded', init, false);
 

@@ -26,11 +26,11 @@
 
 					<h1 class="section-title"><?php the_field('about_title'); ?></h1>
 					<div class="about-content clearfix">
-						<p class="about-me"> <?php the_field('about_description_1') ?></p>
 						<?php while( has_sub_field('images') ) : ?>
 						<?php $image = get_sub_field('image'); ?>
 						<img src="<?php echo $image['sizes']['medium']; ?>" alt="">
 						<?php endwhile; ?>
+						<p class="about-me"> <?php the_field('about_description_1') ?></p>
 					</div>
 
 			<?php endwhile; ?>
@@ -96,7 +96,7 @@
 </section>
 
 <section class="contact" id="contact">
-	<div class="wrapper">
+	<div class="wrapper clearfix">
 		<?php if ( $pageQuery -> have_posts() ) : ?>
 			<?php while ( $pageQuery -> have_posts() ) : ?>
 				<?php $pageQuery -> the_post(); ?>
@@ -104,7 +104,6 @@
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
 		<?php endif; ?>
-		<?php echo do_shortcode('[contact-form-7 id="75" title="Contact Me"]'); ?>
 		<div class="contact-links">
 			<h3>Let's Connect!</h3>
 			<?php 
@@ -112,12 +111,8 @@
 			    'theme_location' => 'contact'
 				) );
 			?>
-			
-		<!-- 	<a href="mailto:tiffany@tiffanyyao.com" target="_top">tiffany@tiffanyyao.com</a>
-			<a href="">Twitter</a>
-			<a href="">Github</a>
-			<a href="">Linkedin</a> -->
 		</div>
+		<?php echo do_shortcode('[contact-form-7 id="75" title="Contact Me"]'); ?>
 	</div>
 </section>
 

@@ -7,8 +7,6 @@
 * Author URI: http://hackeryou.com
 */
 
-@import "bourbon/bourbon";
-@import "neat/neat";
 @import 'normalize';
 @import 'typography';
 @import 'variables.scss';
@@ -54,18 +52,18 @@ section {
 
 
 .wrapper {
-    @include outer-container(100%);
     max-width:980px;
     margin:0 auto;
     padding: 3%;
 }
 
-.home, .about, .skills, .contact {
+.about, .skills,{
 	min-height: 100vh;
 }
 
 #home {
     position: relative;
+    min-height: 100vh;
 }
 
 #home .wrapper {
@@ -133,6 +131,7 @@ section {
             @include fontSizer(30);
             position: relative;
            // margin-bottom: 7%;
+           margin-top: 0;
            margin-bottom: 30px;
             &::after {
                 content: '';
@@ -146,8 +145,9 @@ section {
         }
         .technologies {
             margin-top: 0;
+            margin-bottom: 5%;
             @include fontSizer(15);
-            letter-spacing: 0;
+            letter-spacing: 1px;
             span {
                 color: red;
                 font-size: 24px;
@@ -157,7 +157,7 @@ section {
             }
         }
         .item-desc {
-            margin-bottom: 8%;
+            margin-bottom: 4%;
             position: relative;
             top: -17px;
         }
@@ -203,7 +203,7 @@ section {
             box-shadow: 14px -11px 0 $accent;
         }
         .about-me, img {
-            float: left;
+            //float: left;
         }
     }
    
@@ -262,12 +262,13 @@ section {
 
 
 //CONTACT 
-
+#contact .wrapper {
+    padding-bottom: 5%;
+}
 form {
-    @include span-columns(7 of 12);
+    width: 55%;
     input, textarea {
-        padding: 2%;
-        width: 80%;
+        padding: 1%;
     }
     input[type=submit] {
         background: none;
@@ -283,10 +284,14 @@ form {
     }
 }
 
+.contact-links, form {
+    float: left;
+}
+
 
 
 .contact-links {
-    @include span-columns(5 of 12);
+    width: 45%;
     h3 {
         font-family: $navFont;
         color: $accent;
@@ -318,7 +323,10 @@ form {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    body {
+        background: #F9F9F9;
+    }
     section {
         margin-left: 0;
         h1 {
@@ -336,7 +344,9 @@ form {
         font-family: $navFont;
         @include fontSizer(50);
     }
-
+    #home {
+        min-height: 100vh;
+    }
     #home, #about, #skills, #portfolio, #contact {
         width: 100%;
         position: static;
@@ -360,13 +370,14 @@ form {
         margin-top: 0;
         width: 100%;
         .about-me {
-            margin: 0 auto 15% auto;
+            margin: 0 auto 5% auto;
             float: none;
             width: 100%;
         }
         img {
-            width: 80%;
-            margin: 0 auto;
+            width: 50%;
+            //margin: 0 auto;
+            margin-bottom: 5%;
             display: block;
             float: none;
         }
@@ -389,21 +400,29 @@ form {
 
     .portfolio-item {
         margin-bottom: 15%;
+        img {
+            margin-bottom: 7%;
+            margin-left: 3%;
+        }
         img , .item-desc-wrapper {
             float: none;
             width: 100%;
             display: block;
-            margin-right: 0;
-            margin: 0 auto;
         }
         .item-desc-wrapper {
             .item-desc {
-                margin-bottom: 3%;
+                margin-bottom: 2%;
             }
         }
     }
+    .portfolio-item:last-child {
+        margin-bottom: 10%;
+    }
 
     .contact {
+        .section-title {
+            margin-bottom: 2%;
+        }
         form, .contact-links {
             float: none;
             width: 100%;
@@ -412,7 +431,6 @@ form {
             margin: 0 auto;
         }
         .contact-links {
-            margin-top: 12%;
             h3 {
                 margin-bottom: 5%;
             }
