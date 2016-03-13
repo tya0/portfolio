@@ -28,7 +28,23 @@ function mobileMenu(){
             "transform": "rotateY(0deg)"
         });
     });
+
+    $("ul.nav li a").on("click", function(){
+        if ($(window).width() < 600) {
+            $("aside").fadeOut();
+            $(".cube-mobile figure.back").find("p").hide();
+            $("figure.front p").show();
+            $(".cube-mobile").css({
+                "transform": "translateZ(-100px)",
+               "transform": "rotateY(0deg)"
+            });
+        };
+    });
 };
+
+function closeNav() {
+    
+}
 
 function screenWidth(){
     $(window).on('resize', function(){
