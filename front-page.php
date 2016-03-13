@@ -41,7 +41,7 @@
 
 <section class="skills" id="skills">
 	<div class="wrapper">
-		<h2 class="intro-tools">Using these skills and tools...</h2>
+		<h2 class="intro-tools">With these skills and tools...</h2>
 		<?php if ( $pageQuery -> have_posts() ) : ?>
 			<?php while ( $pageQuery -> have_posts() ) : ?>
 				<?php $pageQuery -> the_post(); ?>
@@ -52,7 +52,7 @@
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
 		<?php endif; ?>
-		<h2 class="lead-to-portfolio">I have built... </h2>
+		<h2 class="lead-to-portfolio">I've built some cool stuff... </h2>
 		<div class="icon-container"><i class="fa fa-long-arrow-down fa-5x arrow animated infinite bounce"></i></div>
 	</div>
 </section>

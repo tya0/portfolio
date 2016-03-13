@@ -10,7 +10,7 @@ function mobileMenu(){
             //display: "null",
             duration: 1250,
             stagger: 40,
-            delay: 300
+            delay: 100
         });
     })
 };

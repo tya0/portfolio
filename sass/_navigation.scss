@@ -70,7 +70,16 @@ ul.nav li a {
 }
 
 @media (max-width: 600px) {
-
+	ul.nav {
+		top: 20px;
+		left: 0;
+		li {
+			padding: 10px 0;
+			a {
+				@include fontSizer(40);
+			}
+		}
+	}
 	aside {
 		width: 100%;
 		position: fixed;
