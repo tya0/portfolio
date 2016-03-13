@@ -43,23 +43,23 @@
 
    <ul class="nav buttons" id="menu">
           <li>
-            <a class="nav home-link show-front active" href="#home" data-action="show-front">Home</a>
+            <a class="nav home-link show-front active" href="#home">Home</a>
           </li>
           
           <li>
-            <a class="nav about-link show-back" href="#about" data-action="show-back">About</a>
+            <a class="nav about-link show-back" href="#about" >About</a>
           </li>
           
           <li>
-            <a class="nav skills-link show-right" href="#skills" data-action="show-right">Skills</a>
+            <a class="nav skills-link show-right" href="#skills">Skills</a>
           </li>
           
           <li>
-            <a class="nav portfolio-link show-left" href="#portfolio" data-action="show-left">Work</a>
+            <a class="nav portfolio-link show-left" href="#portfolio" >Work</a>
           </li>
           
           <li>
-            <a class="nav contact-link show-top" href="#contact" data-action="show-top">Contact</a>
+            <a class="nav contact-link show-top" href="#contact">Contact</a>
           </li> 
           <!-- <li><a href="#">Contact</a></li> -->
         </ul>
