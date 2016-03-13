@@ -1,27 +1,6 @@
 function mobileMenu(){
     $(".cube-mobile figure.front").on("click", function(){
-        console.log("front click");
-        $(this).find("p").hide();
-        $("figure.back p").show();
-        $(".cube-mobile").css({
-            "transform": "translateZ(-100px)",
-            "transform": "rotateX(-180deg)"
-        });
-    });
-
-    $(".cube-mobile figure.back").on("click", function(){
-        console.log("back click");
-        $(this).find("p").hide();
-        $("figure.front p").show();
-        $(".cube-mobile").css({
-            "transform": "translateZ(-100px)",
-            "transform": "rotateY(0deg)"
-        });
-    });
-
-    $(".cube-mobile").on("click", function(){
-        console.log("cube click");
-        $("aside").toggle();
+        $("aside").fadeIn();
         $("ul.nav li a")
         .blast({ 
             delimiter: "character"
@@ -32,7 +11,23 @@ function mobileMenu(){
             stagger: 40,
             delay: 100
         });
-    })
+        $(this).find("p").hide();
+        $("figure.back p").show();
+        $(".cube-mobile").css({
+            "transform": "translateZ(-100px)",
+            "transform": "rotateX(-180deg)"
+        });
+    });
+
+    $(".cube-mobile figure.back").on("click", function(){
+        $("aside").fadeOut();
+        $(this).find("p").hide();
+        $("figure.front p").show();
+        $(".cube-mobile").css({
+            "transform": "translateZ(-100px)",
+            "transform": "rotateY(0deg)"
+        });
+    });
 };
 
 function screenWidth(){
