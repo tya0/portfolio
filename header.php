@@ -13,8 +13,18 @@
 <body <?php body_class(); ?>>
 
 <header>
-    <div class="menu-wrap">
+<!--     <div class="menu-wrap">
         <div class="hamburger"><span></span></div>
+    </div> -->
+    <div class="cube-mobile-container">
+      <div class="cube-mobile show-front">
+          <figure class="front"><p>Menu</p></figure>
+          <figure class="back"><p> X </p></figure>
+          <figure class="right"><p></p></figure>
+          <figure class="left"><p></p></figure>
+          <figure class="top"><p></p></figure>
+          <figure class="bottom"><p></p></figure>
+      </div>
     </div>
 </header>
 

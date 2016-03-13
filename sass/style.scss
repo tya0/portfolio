@@ -393,6 +393,7 @@ form {
 @media (max-width: 768px) {
     .wrapper {
         width: 100%;
+        padding: 3% 20px 3% 40px;
         // padding-left: 8%;
         // padding-right: 8%;
     }
@@ -428,6 +429,9 @@ form {
         .devicon-gulp-plain,
         .devicon-github-plain {
             @include fontSizer(50);
+            p {
+                @include fontSizer(14);
+            }
         }
     }
 
@@ -445,8 +449,12 @@ form {
     }
     .contact-links {
         margin-bottom: 7%;
+        width: 100%;
         h3 {
             margin-top: 0;
+        }
+        #menu-contact li {
+            margin-bottom: 5%;
         }
     }
     
@@ -463,12 +471,10 @@ form {
         }
     }
 
-   
-
     .section-title {
         display: block;
         font-family: $navFont;
-        @include fontSizer(50);
+        @include fontSizer(45);
     }
     #home {
         min-height: 100vh;

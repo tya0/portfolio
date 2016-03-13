@@ -71,12 +71,13 @@ ul.nav li a {
 
 @media (max-width: 600px) {
 	ul.nav {
-		top: 20px;
-		left: 0;
+		top: 40px;
+		left: -35px;
 		li {
 			padding: 10px 0;
 			a {
 				@include fontSizer(40);
+				color: #C4C0C0;
 			}
 		}
 	}
