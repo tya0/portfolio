@@ -71,8 +71,8 @@ section {
     z-index: 0;
     position: absolute;
     left: 80px;
-    max-width: 100%;
-    width:1180px;
+    //max-width: 100%;
+    width:12000px;
     .home-content {
         position: absolute;
         top: 50%;
@@ -103,6 +103,16 @@ section {
 	opacity: 1;
 }
 
+/// to fix velocity/blast issue in safari 
+.block {
+    display: block;
+}
+
+.stop-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
 #home .wrapper {
     .home-content {
         width: 700px;
@@ -116,6 +126,9 @@ section {
 ////// PORTFOLIO STYLES
 #portfolio {
     clear: both;
+    .wrapper {
+        padding: 3% 50px 0 50px;
+    }
 }
 
 .portfolio-item {
@@ -375,7 +388,7 @@ form {
         .wrapper {
             left: 45px;
             .home-content {
-                left: 50px;
+                left: 35px;
                 h1 {
                     @include fontSizer(80);
                 }
@@ -430,7 +443,7 @@ form {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 625px) {
     body {
         background: #F9F9F9;
     }
@@ -514,8 +527,18 @@ form {
             }
         }
     }
+    #portfolio .wrapper {
+        padding: 2% 5% 0 5%;
+        .portfolio-item:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
 
-    .portfolio-item:last-child {
-        margin-bottom: 0;
+@media (max-width: 480px) {
+    .contact {
+        form {
+            width: 100%;
+        }
     }
 }

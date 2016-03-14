@@ -1,16 +1,17 @@
 function mobileMenu(){
     $(".cube-mobile figure.front").on("click", function(){
         $("aside").fadeIn();
+        $("html").addClass("stop-scroll");
         $("ul.nav li a")
         .blast({ 
             delimiter: "character"
         })
         .velocity("fadeIn", { 
-            //display: "null",
             duration: 1250,
             stagger: 40,
             delay: 100
-        });
+        })
+        $("ul.nav li a").addClass("block");
         $(this).find("p").hide();
         $("figure.back p").show();
         $(".cube-mobile").css({
@@ -21,6 +22,8 @@ function mobileMenu(){
 
     $(".cube-mobile figure.back").on("click", function(){
         $("aside").fadeOut();
+        $("ul.nav li a").addClass("block");
+        $("html").removeClass("stop-scroll");
         $(this).find("p").hide();
         $("figure.front p").show();
         $(".cube-mobile").css({
@@ -32,6 +35,7 @@ function mobileMenu(){
     $("ul.nav li a").on("click", function(){
         if ($(window).width() < 600) {
             $("aside").fadeOut();
+            $("html").removeClass("stop-scroll");
             $(".cube-mobile figure.back").find("p").hide();
             $("figure.front p").show();
             $(".cube-mobile").css({
@@ -42,27 +46,12 @@ function mobileMenu(){
     });
 };
 
-function closeNav() {
-    
-}
-
-function screenWidth(){
-    $(window).on('resize', function(){
-        if ($(window).width() > 600) {
-            $('aside').css('display', 'block');
-        } else if ($(window).width() <= 600) {
-            $('aside').css('display', 'none');
-        }
-    });
-};
-
 function homeText() {
 	$(".home-content h1, .home-content h2")
 	.blast({ 
 		delimiter: "character"
 	})
 	.velocity("fadeIn", { 
-		//display: "null",
 		duration: 1250,
 		stagger: 60,
 		delay: 400
@@ -101,47 +90,45 @@ function navScrollCubeRotate() {
     });
 };
 
-function rotateCube() {
-    $.fn.hasClassName = function(a){
-        return new RegExp("(?:^|\\s+)" + a + "(?:\\s+|$)").test(this.className) 
-    }
+// function rotateCube() {
+//     $.fn.hasClassName = function(a){
+//         return new RegExp("(?:^|\\s+)" + a + "(?:\\s+|$)").test(this.className) 
+//     };
 
-    $.fn.addClassName = function(a){
-         if (!this.hasClassName(a)) {
-                this.className = [this.className, a].join(" ");
-         }
-    }
+//     $.fn.addClassName = function(a){
+//          if (!this.hasClassName(a)) {
+//                 this.className = [this.className, a].join(" ");
+//          }
+//     };
 
-    $.fn.removeClassName = function(b){
-        if (this.hasClassName(b)) {
-            var a = this.className;
-            this.className = a.replace(new RegExp("(?:^|\\s+)" + b + "(?:\\s+|$)", "g"), " ");
-        }
-    }
+//     $.fn.removeClassName = function(b){
+//         if (this.hasClassName(b)) {
+//             var a = this.className;
+//             this.className = a.replace(new RegExp("(?:^|\\s+)" + b + "(?:\\s+|$)", "g"), " ");
+//         }
+//     };
 
-    $.fn.toggleClassName = function(a){
-        this[this.hasClassName(a) ? "removeClassName" : "addClassName"](a);
-    }
+//     $.fn.toggleClassName = function(a){
+//         this[this.hasClassName(a) ? "removeClassName" : "addClassName"](a);
+//     };
 
-    $cube = $(".cube");
-    $navLink = $(".nav li a");
-    $panelClass = "show-front";
+//     $cube = $(".cube");
+//     $navLink = $(".nav li a");
+//     $panelClass = "show-front";
 
-    $navLink.on("click", function(){
-        console.log("cliclk");
-        $cube.removeClassName($panelClass);
-        $panelClass = $(this).attr("class");
-        $cube.addClassName($panelClass);
-    })
-};
+//     $navLink.on("click", function(){
+//         console.log("cliclk");
+//         $cube.removeClassName($panelClass);
+//         $panelClass = $(this).attr("class");
+//         $cube.addClassName($panelClass);
+//     })
+// };
 
 
 $(function() { // begin document ready
     mobileMenu();
     homeText();
     navScrollCubeRotate();
-    screenWidth();
-    rotateCube();
 
 }); // end document ready
 
