@@ -43,13 +43,11 @@ img {
 section {
 	width:calc(100% - 200px);
 	margin-left:200px;
-
 }
 
 .section-title {
     display: none;
 }
-
 
 .wrapper {
     max-width:980px;
@@ -72,15 +70,10 @@ section {
     transform: skew(-12deg);
     z-index: 0;
     position: absolute;
-   // left: 280px;
     left: 80px;
     max-width: 100%;
     width:1180px;
-    //@include outer-container(100%);
-    //@include span-columns(12);
-
     .home-content {
-    	//transform: skew(12deg);
         position: absolute;
         top: 50%;
         left: 50%;
@@ -124,21 +117,20 @@ section {
 #portfolio {
     clear: both;
 }
+
 .portfolio-item {
     margin-bottom: 8%;
-
     .item-desc-wrapper{
         width: 50%;
         float: left;
         letter-spacing: 1px;
         h2 {
+            @include fontSizer(30);
             font-family: $navFont;
             color: black;
-            @include fontSizer(30);
             position: relative;
-           // margin-bottom: 7%;
-           margin-top: 0;
-           margin-bottom: 30px;
+            margin-top: 0;
+            margin-bottom: 30px;
             &::after {
                 content: '';
                 height: 3px;
@@ -150,10 +142,11 @@ section {
             }
         }
         .technologies {
+            @include fontSizer(15);
+            font-weight: 700;
+            letter-spacing: 1px;
             margin-top: 0;
             margin-bottom: 5%;
-            @include fontSizer(15);
-            letter-spacing: 1px;
             span {
                 color: red;
                 font-size: 24px;
@@ -168,12 +161,12 @@ section {
             top: -17px;
         }
         a {
-            text-decoration: none;
+            @include fontSizer(18);
             color: $accent;
+            text-decoration: none;
             padding: 5px 8px;
             border: 1px solid $accent;
             transition: all 1s;
-            @include fontSizer(18);
             &:hover {
                 color: white;
                 background: $accent;
@@ -188,42 +181,31 @@ section {
         border: 5px solid white;
         box-shadow: -14px -11px 0 #D8D8D8;
     }
-
 }
-
-
-
-
 
 .about .wrapper {
     .about-content {
         margin-top: 10%;
         .about-me {
-            width: 60%;
             @include fontSizer(18);
             text-align: justify;
             margin-right: 5%;
+            width: 80%;
         }
         img {
             border: 5px solid white;
             box-shadow: 14px -11px 0 $accent;
         }
-        .about-me, img {
-            //float: left;
-        }
-    }
-   
+    }  
 }
-
-
 
 //// SKILLS 
 .skills {
     .intro-tools, .lead-to-portfolio {
-        text-transform: uppercase;
-        font-family: $navFont;
-        color: black;
         @include fontSizer(50);
+        font-family: $navFont;
+        text-transform: uppercase;
+        color: black;
     }
     .lead-to-portfolio {
         text-align: right;
@@ -251,26 +233,25 @@ section {
 
 %devIcon {
     font-size:70px;
-    // color: #8E7F7F;
     color:#B9B6B6;
 }
 
-    .devicon-html5-plain,
-    .devicon-css3-plain,
-    .devicon-javascript-plain,
-    .devicon-jquery-plain,
-    .devicon-sass-original,
-    .devicon-wordpress-plain,
-    .devicon-gulp-plain,
-    .devicon-github-plain {
-        @extend %devIcon;
-    }
-
+.devicon-html5-plain,
+.devicon-css3-plain,
+.devicon-javascript-plain,
+.devicon-jquery-plain,
+.devicon-sass-original,
+.devicon-wordpress-plain,
+.devicon-gulp-plain,
+.devicon-github-plain {
+    @extend %devIcon;
+}
 
 //CONTACT 
 #contact .wrapper {
     padding-bottom: 5%;
 }
+
 form {
     width: calc(50% - 3%);
     margin-left: 3%;
@@ -288,7 +269,6 @@ form {
         color: $accent;
         font-weight: 700;
         transition: all 0.5s;
-        border: 1px solid $accent;
         width:50%;
         margin: 0 auto;
         &:hover {
@@ -298,19 +278,13 @@ form {
     }
 }
 
-.contact-links{
-    float: left;
-    width: 50%;
-}
-
-
-
 .contact-links {
     width: 35%;
+    float: left;
     h3 {
+        @include fontSizer(30);
         font-family: $navFont;
         color: $accent;
-        @include fontSizer(30);
     }
 }
 
@@ -321,12 +295,12 @@ form {
         list-style: none;
         margin-bottom: 8%;     
         a {
-            text-decoration: none;
+            @include fontSizer(20);
             color: $mainFontColour;
+            text-decoration: none;
             margin-bottom: 5%;
             padding-left: 0;
             position: relative;
-            @include fontSizer(20);
             &:hover .icon {
                 color: $accent;
             }
@@ -339,9 +313,6 @@ form {
 }
 
 @media (max-width: 940px) {
-    .wrapper {
-        // padding-left: 6%;
-    }
     .about .wrapper .about-content {
         margin-top: 5%;
         img {
@@ -351,6 +322,7 @@ form {
             width: 90%;
         }
     }
+
     .skills {
         .devIcons {
             margin: 3% 0;
@@ -359,6 +331,7 @@ form {
             margin-top: 0;
         }
     }
+
     .portfolio-item {
         margin-bottom: 10%;
         img {
@@ -377,6 +350,7 @@ form {
             }
         }
     }
+
     .portfolio-item:last-child {
         margin-bottom: 10%;
     }
@@ -394,9 +368,8 @@ form {
     .wrapper {
         width: 100%;
         padding: 3% 20px 3% 40px;
-        // padding-left: 8%;
-        // padding-right: 8%;
     }
+
     #home {
         .wrapper {
             left: 45px;
@@ -444,9 +417,6 @@ form {
         float: none;
         margin-left: 0;
     }
-    form {
-        //width: 80%;
-    }
     .contact-links {
         margin-bottom: 7%;
         width: 100%;
@@ -457,13 +427,13 @@ form {
             margin-bottom: 5%;
         }
     }
-    
 }
 
 @media (max-width: 600px) {
     body {
         background: #F9F9F9;
     }
+
     section {
         margin-left: 0;
         padding-top: 60px;
@@ -480,13 +450,15 @@ form {
         font-family: $navFont;
         @include fontSizer(45);
     }
-    #home {
-        min-height: 100vh;
-        padding-top: 0;
-    }
+
     #home, #about, #skills, #portfolio, #contact {
         width: 100%;
         position: static;
+    }
+
+    #home {
+        min-height: 100vh;
+        padding-top: 0;
     }
 
     #home .wrapper {
@@ -513,7 +485,6 @@ form {
         }
         img {
             width: 50%;
-            //margin: 0 auto;
             margin-bottom: 5%;
             display: block;
             float: none;
@@ -542,6 +513,7 @@ form {
             }
         }
     }
+
     .portfolio-item:last-child {
         margin-bottom: 0;
     }

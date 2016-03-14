@@ -6,8 +6,6 @@
 	position:fixed;
 	top: 17px;
 	left: 15px;
-	//left:25px;
-	//left: 10px; //changed to accomodate the skew
 	z-index:1000;
 }
 
@@ -19,56 +17,48 @@
 	transform:translateZ (-100px);
 	transition: transform 0.8s;
 
-		figure {
-			margin:0;
-			width:150px;
-			height:150px;
-			display:block;
-			position:absolute;
-			border:1px solid black;
-			text-align: center;
-			line-height: 100px;
-			background-color: rgba(255,63,63,0.7);
-			}
-				p {
-					font-family: $navFont;
-					text-transform: uppercase;
-					font-weight:bold;
-					font-size: 55px;
-					color: black;
-				}
-
-				.front p {
-					font-size: 102px;
-					line-height: 1;
-					font-weight: 700;
-					letter-spacing: 3px;
-				}
-
-			.front {
-				transform: rotateY(0deg) translateZ( 75px );
-			}
-
-			.back {
-				transform: rotateX(180deg) translateZ( 75px );
-			}
-
-			.right {
-				transform: rotateY(90deg) translateZ( 75px );
-			}
-
-			.left {
-				transform: rotateY(-90deg) translateZ( 75px );
-			}
-
-			.top {
-				transform: rotateX(90deg) translateZ( 75px );
-			}
-
-			.bottom {
-				transform: rotateX(-90deg) translateZ( 75px );
-			}
-		
+	figure {
+		margin:0;
+		width:150px;
+		height:150px;
+		display:block;
+		position:absolute;
+		border:1px solid black;
+		text-align: center;
+		line-height: 100px;
+		background-color: rgba(255,63,63,0.7);
+		}
+	p {
+		font-family: $navFont;
+		text-transform: uppercase;
+		font-weight:bold;
+		font-size: 55px;
+		color: black;
+	}
+	.front p {
+		font-size: 102px;
+		line-height: 1;
+		font-weight: 700;
+		letter-spacing: 3px;
+	}
+	.front {
+		transform: rotateY(0deg) translateZ( 75px );
+	}
+	.back {
+		transform: rotateX(180deg) translateZ( 75px );
+	}
+	.right {
+		transform: rotateY(90deg) translateZ( 75px );
+	}
+	.left {
+		transform: rotateY(-90deg) translateZ( 75px );
+	}
+	.top {
+		transform: rotateX(90deg) translateZ( 75px );
+	}
+	.bottom {
+		transform: rotateX(-90deg) translateZ( 75px );
+	}
 }
 
 .front p,
@@ -79,7 +69,6 @@
 .right p {
 	margin-top:20px;
 }
-
 
 .cube .front p, 
 .cube .back p,
@@ -118,9 +107,7 @@
 	transform: translateZ( -100px ) rotateX(   90deg ); 
 }
 
-
 ///// MOBILE CUBE
-
 .cube-mobile-container {
 	width:50px;
 	height:50px;
@@ -129,8 +116,6 @@
 	position:fixed;
 	top: 6px;
 	left: 10px;
-	//left:25px;
-	//left: 10px; //changed to accomodate the skew
 	z-index:1000;
 	display: none;
 }
@@ -142,76 +127,66 @@
 	transform-style: preserve-3d;
 	transform:translateZ (-100px);
 	transition: transform 0.8s;
-
-		figure {
-			margin:0;
-			width:50px;
-			height:50px;
-			display:block;
-			position:absolute;
-			border:1px solid black;
-			text-align: center;
-			line-height: 100px;
-			background-color: rgba(255,63,63,0.7);
-			}
-				p {
-					text-transform: uppercase;
-					font-weight:bold;
-					color: black;
-				}
-				.back p {
-					display: none;
-					font-size: 30px;
-					line-height: 9px;
-					color: black;
-				}
-
-				.front p {
-					font-family: $navFont;
-					font-size: 25px;
-				    line-height: 8px;
-				    font-weight: 700;
-				    display: block;
-				}
-				// .top p {
-				// 	font-family: $navFont;
-				// 	font-size: 30px;
-				// 	line-height: 9px;
-				// 	color: black;
-				// 	display: block;
-				// }
-
-			.front {
-				transform: rotateY(0deg) translateZ( 25px );
-			}
-
-			.back {
-				transform: rotateX(180deg) translateZ( 25px );
-			}
-
-			.right {
-				transform: rotateY(90deg) translateZ( 25px );
-			}
-
-			.left {
-				transform: rotateY(-90deg) translateZ( 25px );
-			}
-
-			.top {
-				transform: rotateX(90deg) translateZ( 25px );
-			}
-
-			.bottom {
-				transform: rotateX(-90deg) translateZ( 25px );
-			}
-		
+	figure {
+		margin:0;
+		width:50px;
+		height:50px;
+		display:block;
+		position:absolute;
+		border:1px solid black;
+		text-align: center;
+		line-height: 100px;
+		background-color: rgba(255,63,63,0.7);
+		}
+	p {
+		text-transform: uppercase;
+		font-weight:bold;
+		color: black;
+	}
+	.back p {
+		display: none;
+		font-size: 30px;
+		line-height: 9px;
+		color: black;
+	}
+	.front p {
+		font-family: $navFont;
+		font-size: 25px;
+	    line-height: 8px;
+	    font-weight: 700;
+	    display: block;
+	}
+	.top p {
+		font-family: $navFont;
+		font-size: 30px;
+		line-height: 9px;
+		color: black;
+		display: block;
+	}
+	.front {
+		transform: rotateY(0deg) translateZ( 25px );
+	}
+	.back {
+		transform: rotateX(180deg) translateZ( 25px );
+	}
+	.right {
+		transform: rotateY(90deg) translateZ( 25px );
+	}
+	.left {
+		transform: rotateY(-90deg) translateZ( 25px );
+	}
+	.top {
+		transform: rotateX(90deg) translateZ( 25px );
+	}
+	.bottom {
+		transform: rotateX(-90deg) translateZ( 25px );
+	}
 }
 
 @media (max-width: 600px) {
 	.container {
 		display: none;
 	}
-
 	.cube-mobile-container {
 		display: block;
 	}

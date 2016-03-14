@@ -22,7 +22,7 @@
           <figure class="back"><p> X </p></figure>
           <figure class="right"><p></p></figure>
           <figure class="left"><p></p></figure>
-          <figure class="top"><p></p></figure>
+          <figure class="top"><p>TY</p></figure>
           <figure class="bottom"><p></p></figure>
       </div>
     </div>

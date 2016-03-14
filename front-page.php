@@ -86,7 +86,7 @@
 							<h2 class="item-title"><?php the_title(); ?></h2>
 							<p class="technologies"><span>// </span> <?php the_field('technologies_used'); ?></p>
 							<p class="item-desc"><?php the_field('portfolio_item_desc'); ?></p>
-							<a href=" <?php echo the_field('portfolio_item_link') ?> ">View Live</a>
+							<a href=" <?php echo the_field('portfolio_item_link') ?> " target="_blank">View Live</a>
 						</div>					
 					</div>
 			<?php endwhile; ?>
