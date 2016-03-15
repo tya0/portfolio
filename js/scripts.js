@@ -129,7 +129,6 @@ $(function() { // begin document ready
     mobileMenu();
     homeText();
     navScrollCubeRotate();
-
 }); // end document ready
 
 

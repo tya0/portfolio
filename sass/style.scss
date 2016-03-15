@@ -224,7 +224,7 @@ section {
         font-family: $navFont;
         text-transform: uppercase;
         color: black;
-        margin-top: 0;
+        margin-top: 50px;
     }
     .lead-to-portfolio {
         text-align: right;
@@ -262,9 +262,11 @@ section {
 .devicon-sass-original,
 .devicon-wordpress-plain,
 .devicon-gulp-plain,
-.devicon-github-plain {
+.devicon-github-plain,
+.devicon-php-plain {
     @extend %devIcon;
 }
+
 
 //CONTACT 
 #contact .wrapper {
@@ -419,7 +421,8 @@ form {
         .devicon-sass-original,
         .devicon-wordpress-plain,
         .devicon-gulp-plain,
-        .devicon-github-plain {
+        .devicon-github-plain,
+        .devicon-php-plain {
             @include fontSizer(50);
             p {
                 @include fontSizer(14);
