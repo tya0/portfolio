@@ -22,7 +22,7 @@ function mobileMenu(){
 
     $(".cube-mobile figure.back").on("click", function(){
         $("aside").fadeOut();
-        $("ul.nav li a").addClass("block");
+        $("ul.nav li a").removeClass("block");
         $("html").removeClass("stop-scroll");
         $(this).find("p").hide();
         $("figure.front p").show();
@@ -48,6 +48,7 @@ function mobileMenu(){
 
 function homeText() {
 	$(".home-content h1, .home-content h2")
+	.css("opacity", "1")
 	.blast({ 
 		delimiter: "character"
 	})
